@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name | Portfolio</title>
+<meta name="description" content="Additive manufacturing engineer and maker. Custom 3D printers, extruders, drones, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f5f2; --surface: #ffffff; --text: #1c1c1e; --muted: #5f6368;
+    --line: #e2e0db; --accent: #e8590c; --accent-soft: #fde8dc;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121214; --surface: #1c1c20; --text: #f2f2f2; --muted: #a0a0a8;
+      --line: #2e2e34; --accent: #ff7a33; --accent-soft: #3a2418;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: Inter, system-ui, sans-serif; line-height: 1.6; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+  nav { position: sticky; top: 0; background: var(--bg); border-bottom: 1px solid var(--line); z-index: 10; }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 60px; }
+  nav .logo { font-weight: 700; color: var(--text); }
+  nav ul { list-style: none; display: flex; gap: 22px; font-size: 15px; }
+  nav ul a { color: var(--muted); }
+  @media (max-width: 560px) { nav ul { gap: 14px; font-size: 14px; } nav .logo { display: none; } }
+
+  header { padding: 90px 0 70px; }
+  .tag { font-family: "JetBrains Mono", monospace; font-size: 13px; color: var(--accent); letter-spacing: .05em; text-transform: uppercase; }
+  h1 { font-size: clamp(36px, 6vw, 58px); line-height: 1.1; margin: 14px 0 18px; }
+  header p { font-size: 19px; color: var(--muted); max-width: 640px; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .btn { padding: 11px 20px; border-radius: 8px; font-weight: 500; font-size: 15px; border: 1px solid var(--line); color: var(--text); background: var(--surface); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn:hover { text-decoration: none; opacity: .88; }
+
+  section { padding: 60px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 28px; margin-bottom: 8px; }
+  .lead { color: var(--muted); margin-bottom: 34px; max-width: 640px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+  .photo { aspect-ratio: 16/10; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; color: var(--accent); font-family: "JetBrains Mono", monospace; font-size: 13px; position: relative; }
+  .photo img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+  .card .body { padding: 20px; flex: 1; }
+  .card h3 { font-size: 19px; margin-bottom: 8px; }
+  .card p { color: var(--muted); font-size: 15px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .chip { font-family: "JetBrains Mono", monospace; font-size: 12px; padding: 3px 9px; border-radius: 99px; background: var(--accent-soft); color: var(--accent); }
+
+  .work { display: grid; gap: 16px; }
+  .work-item { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 8px; padding: 20px 22px; }
+  .work-item h3 { font-size: 18px; margin-bottom: 6px; }
+  .work-item p { color: var(--muted); font-size: 15px; }
+
+  .contact { text-align: center; }
+  .contact .buttons { justify-content: center; }
+  footer { text-align: center; color: var(--muted); font-size: 13px; padding: 30px 0 40px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo">Your Name</a>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#work">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="tag">Additive Manufacturing Engineer &amp; Maker</div>
+    <h1>I design and build machines that make things.</h1>
+    <p>From large-format industrial printers to custom extruders, drones, and electric vehicles, I like taking hardware from idea to working prototype.</p>
+    <div class="buttons">
+      <a class="btn primary" href="#projects">See my projects</a>
+      <a class="btn" href="resume.pdf">Download resume</a>
+      <a class="btn" href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Personal Projects</h2>
+    <p class="lead">Things I've designed and built on my own time.</p>
+    <div class="grid">
+
+      <div class="card">
+        <div class="photo">Add photo: images/printers.jpg<img src="images/printers.jpg" alt="Custom 3D printers" onerror="this.remove()"></div>
+        <div class="body">
+          <h3>Custom 3D Printer Fleet</h3>
+          <p>Designed and built CoreXY and bed-slinger printers from the ground up, including frames, motion systems, electronics, and firmware. Ran a fleet of up to 13 printers for materials and hardware testing.</p>
+          <div class="chips"><span class="chip">CoreXY</span><span class="chip">Firmware</span><span class="chip">Electronics</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="photo">Add photo: images/extruders.jpg<img src="images/extruders.jpg" alt="Custom extruders" onerror="this.remove()"></div>
+        <div class="body">
+          <h3>Application-Specific Extruders</h3>
+          <p>Custom extruders engineered for specific jobs: lightweight designs for fast motion, high-flow designs for throughput, and designs tuned for flexible materials.</p>
+          <div class="chips"><span class="chip">CAD</span><span class="chip">High-Flow</span><span class="chip">Flexibles</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="photo">Add photo: images/drone.jpg<img src="images/drone.jpg" alt="Custom drone" onerror="this.remove()"></div>
+        <div class="body">
+          <h3>Custom Drones</h3>
+          <p>Designed and built multirotor drones, handling component selection, frame fabrication, and power and flight system integration.</p>
+          <div class="chips"><span class="chip">Multirotor</span><span class="chip">RC</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="photo">Add photo: images/longboard.jpg<img src="images/longboard.jpg" alt="Electric longboard" onerror="this.remove()"></div>
+        <div class="body">
+          <h3>32+ MPH Electric Longboard</h3>
+          <p>Designed and manufactured an electric longboard that tops 32 MPH, including drive and power system integration.</p>
+          <div class="chips"><span class="chip">EV</span><span class="chip">Drive Systems</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="photo">Add photo: images/combat-robot.jpg<img src="images/combat-robot.jpg" alt="Antweight combat robot" onerror="this.remove()"></div>
+        <div class="body">
+          <h3>Antweight Combat Robot</h3>
+          <p>Designed and sourced components for a competitive 1 lb combat robot.</p>
+          <div class="chips"><span class="chip">Robotics</span><span class="chip">Competition</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="photo">Add photo: images/freelance.jpg<img src="images/freelance.jpg" alt="Freelance design work" onerror="this.remove()"></div>
+        <div class="body">
+          <h3>Freelance Design</h3>
+          <p>Production-ready 3D models for collectibles, jewelry, and custom hardware, managed from scoping through manufacturer coordination.</p>
+          <div class="chips"><span class="chip">3D Modeling</span><span class="chip">Client Work</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <h2>Professional Experience</h2>
+    <p class="lead">Highlights from my work in additive manufacturing R&amp;D.</p>
+    <div class="work">
+      <div class="work-item">
+        <h3>Large-Format Additive Manufacturing</h3>
+        <p>Led the procurement, setup, and qualification of industrial large-format printers, and engineered custom extruders for multi-kilogram, 100+ hour production runs.</p>
+      </div>
+      <div class="work-item">
+        <h3>Multi-Material Printing Platform</h3>
+        <p>Retrofitted open-source hardware into an automated 5-head hybrid FDM / Direct Ink Write platform controlled with Python.</p>
+      </div>
+      <div class="work-item">
+        <h3>Dual-Material Filament</h3>
+        <p>Developed a PC-cored, ABS-shrouded filament and transitioned it to commercial manufacturing partners.</p>
+      </div>
+      <div class="work-item">
+        <h3>Mentorship</h3>
+        <p>Mentored military cadet interns through full research projects, from project selection to final presentations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <p class="lead" style="margin-left:auto;margin-right:auto">Interested in working together or want to talk shop?</p>
+    <div class="buttons">
+      <a class="btn primary" href="mailto:you@example.com">Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>&copy; 2026 Your Name</footer>
+
+</body>
+</html>
