@@ -9,6 +9,29 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
+
+<style>
+  #frog { position: fixed; left: 0; top: 0; font-size: 36px; pointer-events: none; z-index: 50; }
+</style>
+<script>
+(function () {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var frog = document.createElement("div");
+  frog.id = "frog"; frog.textContent = "🐸";
+  document.body.appendChild(frog);
+  var x = 100, y = 100, tx = x, ty = y, hop = 0, face = 1;
+  addEventListener("pointermove", function (e) { tx = e.clientX; ty = e.clientY; });
+  (function tick() {
+    var dx = tx - x, dy = ty - y, d = Math.hypot(dx, dy);
+    if (d > 60) { x += dx / d * 2.2; y += dy / d * 2.2; hop += 0.18; face = dx < 0 ? 1 : -1; }
+    else hop = 0;
+    var lift = Math.abs(Math.sin(hop)) * 14;
+    frog.style.transform = "translate(" + (x - 18) + "px," + (y - 18 - lift) + "px) scaleX(" + face + ")";
+    requestAnimationFrame(tick);
+  })();
+})();
+</script>
+  
 <body>
 
 <nav>
@@ -26,7 +49,7 @@
   <div class="wrap">
     <div class="tag">Mechanical Engineer &amp; Maker</div>
     <h1>I design and build machines that make things.</h1>
-    <p>Those machines then create functional components for vehicles, home decor, pet accessories, jewelry, and more. I enjoy helping people to take their idea to a functional prototype.</p>
+    <p>Those machines then create functional components for vehicles, home decor, pet accessories, jewelry, and more. I enjoy helping people take their idea to a functional prototype.</p>
     <div class="buttons">
       <a class="btn primary" href="#projects">See my projects</a>
       <a class="btn" href="resume.pdf">Download resume</a>
